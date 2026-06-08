@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Lab Library - Premium Digital Library Management</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body class="home">
+    <div class="page-wrapper">
+      <header>
+        <div class="container">
+          <nav>
+            <a href="index.html" class="logo">📚 E-Lab</a>
+            <ul class="nav-links">
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="books.html">Books</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="admin.html">Admin</a></li>
+            </ul>
+            <div class="nav-right">
+              <button class="theme-toggle">🌙</button>
+              <a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <section class="hero">
+          <div class="container">
+            <div class="hero-content">
+              <div class="hero-text">
+                <h1>Premium Digital Library Management</h1>
+                <p>
+                  Discover, borrow, and manage thousands of books with our
+                  modern library platform. Seamless reading experience for
+                  students, educators, and book lovers.
+                </p>
+                <div class="hero-actions">
+                  <a href="books.html" class="btn btn-primary btn-lg"
+                    >Browse Books</a
+                  >
+                  <a href="#featured" class="btn btn-secondary btn-lg"
+                    >Learn More</a
+                  >
+                </div>
+              </div>
+              <div class="hero-image">
+                <img src="library.avif" alt="Library" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="featured-section" id="featured">
+          <div class="container">
+            <div class="section-header">
+              <p>Featured Collection</p>
+              <h2>Popular Books This Week</h2>
+              <p class="description">
+                Explore our curated selection of the most borrowed and reviewed
+                books.
+              </p>
+            </div>
+            <div id="homeFeaturedGrid" class="card-grid"></div>
+          </div>
+        </section>
+
+        <section class="stats-section">
+          <div class="container">
+            <div class="stats-container">
+              <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-value" id="statTotalBooks">0</div>
+                <div class="stat-label">Total Books</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">📖</div>
+                <div class="stat-value" id="statActiveLoans">0</div>
+                <div class="stat-label">Active Loans</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">⏰</div>
+                <div class="stat-value" id="statOverdueCount">0</div>
+                <div class="stat-label">Overdue Books</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-value" id="statReservedCount">0</div>
+                <div class="stat-label">Reserved</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="featured-section">
+          <div class="container">
+            <div class="section-header">
+              <p>Browse Categories</p>
+              <h2>Explore by Subject</h2>
+            </div>
+            <div id="homeCategories" class="card-grid"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>About</h4>
+              <ul>
+                <li><a href="#">About E-Lab</a></li>
+                <li><a href="#">Our Mission</a></li>
+                <li><a href="#">Team</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 E-Lab Library. All rights reserved.</p>
+            <p>Built with 💜 for the love of reading</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="toast-container"></div>
+  </body>
+</html>

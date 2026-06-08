@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - E-Lab Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body class="dashboard">
+    <div class="page-wrapper">
+      <header>
+        <div class="container">
+          <nav>
+            <a href="index.html" class="logo">📚 E-Lab</a>
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="books.html">Books</a></li>
+              <li><a href="dashboard.html" class="active">Dashboard</a></li>
+              <li><a href="admin.html">Admin</a></li>
+            </ul>
+            <div class="nav-right">
+              <button class="theme-toggle">🌙</button>
+              <a href="books.html" class="btn btn-primary">Browse Books</a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <div class="container">
+          <section style="padding: 2rem 0">
+            <h1>My Dashboard</h1>
+            <p>Manage your library loans and reading activities</p>
+            <div style="display: flex; gap: 1rem; margin-top: 1.5rem">
+              <button id="dashboardRefresh" class="btn btn-secondary">
+                Refresh
+              </button>
+              <button
+                id="dashboardClearNotifications"
+                class="btn btn-secondary"
+              >
+                Clear Notifications
+              </button>
+            </div>
+          </section>
+
+          <div class="dashboard-grid">
+            <div>
+              <div class="stat-card" style="margin-bottom: 1.5rem">
+                <h3>Profile</h3>
+                <p style="margin: 1rem 0">
+                  <strong id="profileName">User Name</strong>
+                </p>
+                <div style="color: var(--text-secondary); font-size: 0.9rem">
+                  <p style="margin: 0.5rem 0" id="profileEmail">
+                    email@example.com
+                  </p>
+                  <p style="margin: 0.5rem 0" id="profileBorrowCount">
+                    Borrowed: 0/5
+                  </p>
+                  <p style="margin: 0.5rem 0" id="profileReservedCount">
+                    Reserved: 0
+                  </p>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 1.5rem">
+                <h3 style="margin-bottom: 1rem">Currently Borrowed</h3>
+                <div class="table-container">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Book Title</th>
+                        <th>Borrowed</th>
+                        <th>Due Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody id="borrowedTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div style="margin-bottom: 1.5rem">
+                <h3 style="margin-bottom: 1rem">Notifications</h3>
+                <div class="stat-card">
+                  <ul
+                    id="dashboardNotifications"
+                    style="list-style: none; padding: 0; margin: 0"
+                  >
+                    <li style="color: var(--text-secondary)">
+                      No notifications
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 1.5rem">
+                <h3 style="margin-bottom: 1rem">Borrow History</h3>
+                <div class="table-container">
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>Book</th>
+                        <th>Borrowed</th>
+                        <th>Returned</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody id="historyTableBody"></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div>
+                <h3 style="margin-bottom: 1rem">Wishlist</h3>
+                <div class="stat-card">
+                  <ul
+                    id="dashboardWishlist"
+                    style="list-style: none; padding: 0; margin: 0"
+                  >
+                    <li style="color: var(--text-secondary)">
+                      No wishlist items
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>About</h4>
+              <ul>
+                <li><a href="#">About E-Lab</a></li>
+                <li><a href="#">Our Mission</a></li>
+                <li><a href="#">Team</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 E-Lab Library. All rights reserved.</p>
+            <p>Built with 💜 for the love of reading</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="toast-container"></div>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Panel - E-Lab Library</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body class="admin">
+    <div class="page-wrapper">
+      <header>
+        <div class="container">
+          <nav>
+            <a href="index.html" class="logo">📚 E-Lab</a>
+            <ul class="nav-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="books.html">Books</a></li>
+              <li><a href="dashboard.html">Dashboard</a></li>
+              <li><a href="admin.html" class="active">Admin</a></li>
+            </ul>
+            <div class="nav-right">
+              <button class="theme-toggle">🌙</button>
+              <a href="books.html" class="btn btn-primary">View Catalog</a>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="page-content">
+        <div class="container">
+          <section style="padding: 2rem 0; margin-bottom: 2rem">
+            <h1>Admin Panel</h1>
+            <p>Manage books, users, and library operations</p>
+            <button
+              id="adminRefresh"
+              class="btn btn-secondary"
+              style="margin-top: 1rem"
+            >
+              Refresh
+            </button>
+          </section>
+
+          <div style="display: grid; gap: 2rem">
+            <div class="stat-card" style="padding: 2rem">
+              <h2>Add New Book</h2>
+              <div class="form-grid" style="margin-top: 1.5rem">
+                <div class="form-group">
+                  <label>Title</label>
+                  <input id="adminTitle" type="text" placeholder="Book title" />
+                </div>
+                <div class="form-group">
+                  <label>Author</label>
+                  <input
+                    id="adminAuthor"
+                    type="text"
+                    placeholder="Author name"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>Category</label>
+                  <input
+                    id="adminCategory"
+                    type="text"
+                    placeholder="Category"
+                  />
+                </div>
+                <div class="form-group">
+                  <label>ISBN</label>
+                  <input id="adminIsbn" type="text" placeholder="ISBN" />
+                </div>
+                <div class="form-group">
+                  <label>Publication Year</label>
+                  <input id="adminYear" type="number" placeholder="2026" />
+                </div>
+                <div class="form-group">
+                  <label>Total Copies</label>
+                  <input id="adminCopies" type="number" placeholder="4" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <textarea
+                  id="adminDescription"
+                  rows="3"
+                  placeholder="Book description"
+                ></textarea>
+              </div>
+              <button
+                id="adminAddBook"
+                class="btn btn-primary"
+                style="margin-top: 1rem"
+              >
+                Add Book
+              </button>
+            </div>
+
+            <div class="stat-card" style="padding: 2rem">
+              <h2>Manage Books</h2>
+              <div class="table-container" style="margin-top: 1.5rem">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Author</th>
+                      <th>Total Copies</th>
+                      <th>Available</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminBooksTable"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="stat-card" style="padding: 2rem">
+              <h2>Borrow Records</h2>
+              <div class="table-container" style="margin-top: 1.5rem">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Book Title</th>
+                      <th>User</th>
+                      <th>Borrowed</th>
+                      <th>Due Date</th>
+                      <th>Status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminBorrowRecords"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1.5rem;
+              "
+            >
+              <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-value" id="adminTotalBooks">0</div>
+                <div class="stat-label">Total Books</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">📖</div>
+                <div class="stat-value" id="adminActiveLoans">0</div>
+                <div class="stat-label">Active Loans</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">⏰</div>
+                <div class="stat-value" id="adminOverdueLoans">0</div>
+                <div class="stat-label">Overdue</div>
+              </div>
+              <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-value" id="adminReservedBooks">0</div>
+                <div class="stat-label">Reserved</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-section">
+              <h4>About</h4>
+              <ul>
+                <li><a href="#">About E-Lab</a></li>
+                <li><a href="#">Our Mission</a></li>
+                <li><a href="#">Team</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Resources</h4>
+              <ul>
+                <li><a href="#">Help Center</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h4>Legal</h4>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>&copy; 2026 E-Lab Library. All rights reserved.</p>
+            <p>Built with 💜 for the love of reading</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <div class="toast-container"></div>
+  </body>
+</html>
